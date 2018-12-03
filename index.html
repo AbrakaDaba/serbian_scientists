@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Srpski naučnici</title>
+    <link href="https://fonts.googleapis.com/css?family=Neucha|PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Српски научници</h1>
+        </div>
+    </header>
+    <div class="cover">
+        <div id="modul">
+            <h2 class="">ДОБРО ДОШЛИ НА СТРАНИЦУ О СРПСКИМ НАУЧНИЦИМА</br>Kолико научника желите да упознате?</h2>
+            <div id="circles_holder">
+                <div class="circle1">1</div>
+                <div class="circle2">2</div>
+                <div class="circle3">3</div>
+            </div>
+        </div>
+    </div>
+    <main id='content'>
+
+    </main>
+    <script>
+        var body = document.getElementsByTagName('body')[0];
+        var img1 = document.createElement('img');
+        var cover = document.getElementsByClassName('cover')[0];
+        
+
+        var img2 = document.createElement('img');
+        var bio = document.createElement("p");
+        var link = document.createElement("a");
+        var h2 = document.getElementsByTagName('h2')[0];
+        var modul = document.getElementById('modul');
+        var circle = document.querySelector('#circles_holder').children; // uhvatimo sve circles
+        var button = document.createElement("button");
+        button.innerHTML = "Dalje";
+        button.setAttribute("type", "button");
+        enterFunction();
+
+        //pressing enter in input field  === presing button "Dalje"
+
+        //cathing circle's number and sending it further
+        for (i = 0; i < circle.length; i++) {
+            circle[i].addEventListener("click", function (e) {
+
+                modul.style.borderRadius = "25px";
+                var clicked = e.target; // uhvatimo kliknuti element
+                var num = clicked.innerHTML; //uvatimo broj iz kliknutog diva 'circle'
+                clicked.parentNode.style.display = "none";
+                inputForming(num);
+
+            });
+        }
+
+        //formiranje input polja u zavisnosti od izabranog broja
+        function inputForming(num) {
+            var form = document.createElement("form");
+            modul.appendChild(form);
+            var names = [];
+            var j = 0;
+            console.log(names);
+            while (j < num) {
+                var input = document.createElement("input");
+                form.appendChild(input);
+                input.setAttribute('id', "naucnik" + j);
+                input.setAttribute('required', "required");
+                form.appendChild(input);
+                var forma = document.getElementsByTagName('form')[0];
+                enterFunction(forma);
+                if (j !== 0) { //placeholderi u odnosu na broj izabranih naucnika
+                    h2.innerText = "Унесите имена научника";
+                    input.setAttribute('placeHolder', "Унесите име " + (j+1) + ". научникa");
+                    
+                } else {
+                    input.focus();
+                    h2.innerText = "Унесите име научника";
+                    input.setAttribute('placeHolder', "Унесите име научникa");
+                }
+                
+                j++;
+                console.log(forma);
+                
+            }
+            form.appendChild(button);
+            button.addEventListener('click', function () {
+                console.log();
+                var names = [];
+                var inputs = document.getElementsByTagName('input');
+                for (i = 0; i < num; i++) {
+                    var name = inputs[i].value;
+                    names.push(name.toLowerCase());
+                    console.log(names);
+                    
+                    if (names.length !== num && names[i] != "tesla" && names[i] != "pupin"){ 
+                        inputs[i].value = '';
+                        inputs[i].style.transform = "scale(1.1)";
+                        inputs[i].style.borderColor = "red";
+                        inputs[i].style.fontSize = "20px";
+                        inputs[i].setAttribute("placeHolder", `Тесла, Пупин или Миланковић`);
+                        inputs[i].focus();
+                        names.pop(name);
+                        console.log(names);
+                    } else {
+                        inputs[i].style.borderColor = "#888";
+                        inputs[i].style.transform = "scale(1)";
+                        inputs[i].style.fontSize = "25px";
+                        makingBio(names);
+                        console.log(names.length, parseInt(num));
+                    }
+                    
+                }
+            });
+             
+        };
+        
+        
+        function makingBio(names) {
+            modul.style.backgroundColor = "#568";
+            setInterval(function () {
+                cover.style.opacity = "0"
+                //  cover.style.transform="rotate(720deg)";
+            }, 1000);
+        }
+        
+        
+        function enterFunction() {
+            body.addEventListener("click", function(e) {
+                e.preventDefault();
+                if (e.keyCode === 13) {
+                    //button.click();
+                    return false;
+                }
+            });
+        }
+        </script>
+</body>
+
+</html>

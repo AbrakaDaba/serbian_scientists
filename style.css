@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.neucha {
+    font-family: 'Neucha', cursive;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background: url('flag1.jpg') left center no-repeat, url('flag.jpg') right top no-repeat;
+    background-repeat: no-repeat;
+    background-size: 50% 100%, 50% 100%;
+    background-color: rgba(78, 73, 73, 0.3);
+    border-bottom: 2px solid rgb(179, 152, 2);
+    border-top: 2px solid rgb(179, 152, 2);
+    background-blend-mode: darken;
+    max-height: 150px;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: 9px;
+    font-family: 'Neucha', cursive;
+    background: linear-gradient(to right, rgba(78, 73, 73, 0) 0%, rgb(212, 212, 212) 50%, rgb(212, 212, 212) 50%, rgba(78, 73, 73, 0) 100%);
+    line-height: 150px;
+    font-size: 70px;
+    height: 150px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 1px rgb(179, 152, 2);
+
+}
+
+.cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-top: -150px;
+    visibility: visible;
+    transition: ease 1s;
+}
+
+#modul {
+    min-height: 60%;
+    max-width: 90%;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgba(1, 27, 39, 0.534);
+    padding: 5%;
+    border-radius: 100px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 25px rgb(58, 58, 58);
+    
+    transition: all 3s;
+    /* Add Zoom Animation */
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 2s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(141, 2, 2);
+    letter-spacing: 2px;
+}
+
+#circles_holder {
+    min-width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#circles_holder div {
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    font-size: 100px;
+    background-color: rgba(158, 6, 6, 0.493);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    border: 2px solid rgb(59, 59, 59);
+}
+
+#circles_holder div:nth-child(2) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#circles_holder div:hover {
+    background-color: rgba(158, 6, 6, 0.719);
+    box-shadow: 0px 0px 30px rgb(179, 152, 2);
+    cursor: pointer;
+    font-size: 125px;
+    text-shadow: 0px 0px 30px rgb(179, 152, 2);
+    transition-duration: 0.3s;
+    border: 2px solid rgb(253, 253, 253);
+}
+
+
+
+input {
+    margin-top: 10%;
+    text-align: center;
+    width: 330px;
+    height: 65px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    display: block;
+     
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px #111;
+    outline: none;
+    transition-duration: 0.3s;
+}
+
+input:focus{
+    transform: scale(1.1);
+    transition: ease 0.4s;
+}
+button {
+    width: 330px;
+    background-color: rgb(182, 182, 182);
+    border-radius: 10px;
+    border: 1px solid orange;
+    height: 65px;
+    margin-top: 10%;
+    font-size: 25px;
+    margin-right: 20px;
+    color: rgb(15, 15, 95);
+}
+
+button:hover {
+    border-radius: 10px;
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+    color: white;
+}
+button:focus {
+    border-radius: 10px;
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
