@@ -1,2 +1,3 @@
 # serbian_scientists
-NIkola Tesla, Mihajlo Pupin and Milutin Milankovic bio's
+Meet Nikola Tesla, Mihajlo Pupin and Milutin Milankovic - Cyrilic version
+Fully responsive, JS exercise, DOM Manipulation
