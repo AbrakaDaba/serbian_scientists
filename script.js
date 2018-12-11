@@ -47,9 +47,7 @@ function inputForming(num) {
         input.setAttribute('id', "naucnik" + j);
         input.setAttribute('required', "required");
         form.appendChild(input);
-        input.addEventListener("change", function() {
-            button.click();
-        })
+       
         h2.innerText = "Унесите презимена научника";
         input.setAttribute('placeHolder', "Унесите презиме " + (j + 1) + ". научникa");
         input.parentNode.firstElementChild.focus();
